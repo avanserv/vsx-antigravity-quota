@@ -473,7 +473,7 @@ function updateUI(responseData, histories, currentPeriod) {
                 <div class="model-tags" style="margin-bottom: 8px;">${labels}</div>
                 <div class="progress-section" style="margin-bottom: 12px;">
                     <div class="flex-row">
-                        <span>Quota</span>
+                        <span>Remaining Quota</span>
                         <span>${percentage}%</span>
                     </div>
                     <div class="progress-track">
