@@ -96,8 +96,8 @@ export class StatusBarManager {
 
         // Icon logic
         let icon = '$(check)'
-        if (fraction <= 0.2) icon = '$(alert)'
-        else if (fraction <= 0.5) icon = '$(pulse)'
+        if (fraction <= 0.2) {icon = '$(alert)'}
+        else if (fraction <= 0.5) {icon = '$(pulse)'}
 
         // Color logic
         if (fraction <= 0.2) {
@@ -137,7 +137,7 @@ export class StatusBarManager {
                     totalTime += curr.timestamp - prev.timestamp
                 }
             }
-            if (totalTime > 0) ratePerMs = totalDelta / totalTime
+            if (totalTime > 0) {ratePerMs = totalDelta / totalTime}
         }
 
         const remaining = fraction // fraction is remaining quota (0.0 to 1.0)
@@ -149,9 +149,9 @@ export class StatusBarManager {
             const hours = Math.floor((timeLeftMs % 86400000) / 3600000)
             const mins = Math.round((timeLeftMs % 3600000) / 60000)
 
-            if (days > 0) estLimitStr = `~${days}d ${hours}h`
-            else if (hours > 0) estLimitStr = `~${hours}h ${mins}m`
-            else estLimitStr = `~${mins}m`
+            if (days > 0) {estLimitStr = `~${days}d ${hours}h`}
+            else if (hours > 0) {estLimitStr = `~${hours}h ${mins}m`}
+            else {estLimitStr = `~${mins}m`}
         } else if (remaining <= 0) {
             estLimitStr = '0m'
         }

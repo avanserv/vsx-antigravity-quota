@@ -18,7 +18,7 @@ export class HistoryService {
             const usage = 1.0 - fraction
 
             // Update overall max
-            if (usage > overallMax) overallMax = usage
+            if (usage > overallMax) {overallMax = usage}
 
             // Update category max
             const label = m.label || m.modelOrAlias?.model || 'Unknown'
@@ -52,7 +52,7 @@ export class HistoryService {
         categoryFilter?: string
     ): UsageEntry[] {
         const history: UsageEntry[] = context.globalState.get(this.HISTORY_KEY, [])
-        if (!history.length) return []
+        if (!history.length) {return []}
 
         const now = Date.now()
         let durationMs = 0
@@ -88,7 +88,7 @@ export class HistoryService {
         relevantData.forEach((entry) => {
             // Find which bucket this entry belongs to
             const offset = entry.timestamp - startTime
-            if (offset < 0) return
+            if (offset < 0) {return}
 
             const bucketIndex = Math.floor(offset / stepMs)
             if (bucketIndex >= 0 && bucketIndex < result.length) {

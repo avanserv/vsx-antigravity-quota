@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand(refreshCommandId, () => {
             sidebarProvider.refresh().then((data) => {
-                if (data) statusBarManager.updateWidgets(data)
+                if (data) {statusBarManager.updateWidgets(data)}
             })
         })
     )
@@ -30,13 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Initial Refresh
     sidebarProvider.refresh().then((data) => {
-        if (data) statusBarManager.updateWidgets(data)
+        if (data) {statusBarManager.updateWidgets(data)}
     })
 
     // Refresh every 60 seconds (1 minute)
     const interval = setInterval(() => {
         sidebarProvider.refresh().then((data) => {
-            if (data) statusBarManager.updateWidgets(data)
+            if (data) {statusBarManager.updateWidgets(data)}
         })
     }, 60 * 1000)
     context.subscriptions.push(new vscode.Disposable(() => clearInterval(interval)))

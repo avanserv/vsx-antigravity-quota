@@ -14,9 +14,9 @@ export function getNonce(): string {
 
 export function getModelCategory(label: string): string {
     const lowerLabel = label.toLowerCase()
-    if (lowerLabel.includes('gemini') && lowerLabel.includes('pro')) return 'Gemini Pro'
-    if (lowerLabel.includes('gemini') && lowerLabel.includes('flash')) return 'Gemini Flash'
-    if (lowerLabel.includes('claude')) return 'Claude'
-    if (lowerLabel.includes('gpt')) return 'GPT'
+    if (lowerLabel.includes('gemini') && lowerLabel.includes('pro')) {return 'Gemini Pro'}
+    if (lowerLabel.includes('gemini') && lowerLabel.includes('flash')) {return 'Gemini Flash'}
+    if (lowerLabel.includes('claude')) {return 'Claude'}
+    if (lowerLabel.includes('gpt')) {return 'GPT'}
     return 'Other'
 }
